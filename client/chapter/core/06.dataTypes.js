@@ -75,31 +75,29 @@ console.log(typeof id);
 
 console.clear();
 
-
-
-
 // Object
 
 const user = {
   name: 'tiger',
   age: 20,
-  sum:function(a,b){
-    return a + b
+  sum: function (a, b) {
+    return a + b;
   },
 
-  sayHi:function(){ // 1 normal function
-    return 'hello'
+  sayHi: function () {
+    // 1 normal function
+    return 'hello';
   },
 
-  sayHi2:()=>{      // 2 arrow function
-    return this
+  sayHi2: () => {
+    // 2 arrow function
+    return this;
   },
 
-  sayHi3(){         // 3 concise method
-    return this
-  }
-  
-
+  sayHi3() {
+    // 3 concise method
+    return this;
+  },
 };
 
 // Array
@@ -119,34 +117,16 @@ const arr = [
 
 // function
 
-function 붕어빵틀(재료){
-  return `따끈 따끈 맛있는 ${재료} 맛 붕어빵`
+function 붕어빵틀(재료) {
+  return `따끈 따끈 맛있는 ${재료} 맛 붕어빵`;
 }
 
-
-const 팥붕 = 붕어빵틀('팥')
-const 슈붕 = 붕어빵틀('슈크림')
-const 와붕 = 붕어빵틀('와사비')
-
+const 팥붕 = 붕어빵틀('팥');
+const 슈붕 = 붕어빵틀('슈크림');
+const 와붕 = 붕어빵틀('와사비');
 
 // console.log(팥붕);
 // console.log(슈붕);
 // console.log(와붕);
 
-
-
-
-
 // this
-
-
-
-
-
-
-
-
-
-
-
-
