@@ -75,28 +75,41 @@ switch (thisTime) {
 
 /* switch vs. if -------------------------------------------------------- */
 
-const value = +prompt('0~6까지의 숫자를 입력해주세요.');
+//함수는 하나의 기능만을 수행하는 것
 
-switch (value) {
-  case 0:
-    console.log('일');
-    break;
-  case 1:
-    console.log('월');
-    break;
-  case 2:
-    console.log('화');
-    break;
-  case 3:
-    console.log('수');
-    break;
-  case 4:
-    console.log('목');
-    break;
-  case 5:
-    console.log('금');
-    break;
-  case 6:
-    console.log('토');
-    break;
+//sEPARATION OF CONCERNS (관심사의 분리)
+// 매개변수 PARAMETER
+function getRandom(n) {
+  const value = Math.floor(Math.random() * n);
+  return value;
+}
+function getDay(value) {
+  // const value = getRandom(num);
+  // const value = Math.floor(Math.random() * 7);
+
+  console.log(value);
+
+  switch (value) {
+    case 0:
+      console.log('일');
+      break;
+    case 1:
+      console.log('월');
+      break;
+    case 2:
+      console.log('화');
+      break;
+    case 3:
+      console.log('수');
+      break;
+    case 4:
+      console.log('목');
+      break;
+    case 5:
+      console.log('금');
+      break;
+    case 6:
+      console.log('토');
+      break;
+  }
 }
