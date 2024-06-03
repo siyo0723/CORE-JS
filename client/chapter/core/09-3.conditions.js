@@ -2,6 +2,25 @@
 /* Switch           */
 /* ---------------- */
 
+let a = 100;
+
+switch (a) {
+  case 10:
+    console.log('10입니다!');
+    break;
+
+  case 11:
+    console.log('11입니다!');
+    break;
+
+  case 12:
+    console.log('12입니다!');
+    break;
+
+  default:
+    console.log('10, 11, 12가 없습니다.');
+}
+
 const MORNING = '아침',
   LUNCH = '점심',
   DINNER = '저녁',
@@ -9,9 +28,32 @@ const MORNING = '아침',
   LATE_NIGHT = '심야',
   DAWN = '새벽';
 
-let thisTime;
+let thisTime = MORNING;
 
 /* 다양한 상황에 맞게 처리 --------------------------------------------------- */
+
+switch (thisTime) {
+  case MORNING:
+    console.log('디스코드를 켠다.');
+    break;
+
+  case LUNCH:
+    console.log('체력 보충을 위한 잠을 잔다.');
+    break;
+
+  case DINNER:
+    console.log('수업 내용을 복습한다.');
+    break;
+
+  case NIGHT:
+    console.log('내일 수업을 예습한다.');
+    break;
+
+  case LATE_NIGHT:
+  case DAWN:
+    console.log('꿈속에서 배웠던 코드를 생각한다.');
+    break;
+}
 
 // 조건 유형(case): '아침'
 // '뉴스 기사 글을 읽는다.'
@@ -32,17 +74,29 @@ let thisTime;
 /* switch문 → if문 변환 --------------------------------------------------- */
 
 /* switch vs. if -------------------------------------------------------- */
-switch (thisTIme) {
-  case MORNING:
-    alert('뉴스 기사 글을 읽는다.');
+
+const value = +prompt('0~6까지의 숫자를 입력해주세요.');
+
+switch (value) {
+  case 0:
+    console.log('일');
     break;
-  case LUNCH:
-    alert('자주 가는 식당에 가서 식사를 한다.');
+  case 1:
+    console.log('월');
     break;
-  case DINNER:
-    alert('동네 한바퀴를 조깅한다.');
+  case 2:
+    console.log('화');
     break;
-  case LATE_NIGHT:
-    alert('친구에게 전화를 걸어 수다를 떤다.');
+  case 3:
+    console.log('수');
+    break;
+  case 4:
+    console.log('목');
+    break;
+  case 5:
+    console.log('금');
+    break;
+  case 6:
+    console.log('토');
     break;
 }
