@@ -2,12 +2,6 @@
 /* Do While Loop        */
 /* -------------------- */
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 08f248de8d1b3755e6434b30d340b78f41849025
 // let i = 0;
 
 // do{
@@ -22,15 +16,6 @@
 
 // }while(i < 5)
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
->>>>>>> 08f248de8d1b3755e6434b30d340b78f41849025
 // do ~ while 문 (역순환)
 // - prompt 창을 띄워 사용자로 하여금 순환 횟수를 요청
 // - 사용자로부터 요청된 횟수 만큼 역방향으로 순환 출력
@@ -38,33 +23,31 @@
 //   '최초 실행된 메시지입니다. 이 메시지는 조건이 거짓이어도 볼 수 있습니다.' 출력
 // - 순환 중단
 
-<<<<<<< HEAD
+// let result = prompt("몇번?");
+
+// do {
+//   console.log('최초실행 메세지');
+
+//   if(result < 0) {
+//     break;
+//   }
+
+//   result--;
+// }while(result >= 0)
+
+
 // do ~ while 문 (순환)
-// - 위 do ~ while 문을 순방향으로 순환되도록 설정
-=======
 
+// let count = 0;
 
-if... break;
+// do{
+//   console.log(count++);
+// }while(result--)
 
-
-
-
-// do ~ while 문 (순환)
 // - 위 do ~ while 문을 순방향으로 순환되도록 설정
 
+let first = document.querySelector('.first');
 
+console.log(first);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 08f248de8d1b3755e6434b30d340b78f41849025
+//first의 다음 요소 선택 => .second
