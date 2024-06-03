@@ -71,8 +71,6 @@ switch (thisTime) {
 // 조건 유형(case): '새벽'
 // '한밤 중이거나, 새벽이니 아마도 꿈나라에 있을 것이다.'
 
-<<<<<<< HEAD
-=======
 // if
 // else if
 
@@ -88,51 +86,10 @@ if (thisTime === MORNING) {
   console.log('꿈속에서 배웠던 코드를 만듭니다.');
 }
 
->>>>>>> 5285ac7869c8a889dca375113927cff3aea77c73
 /* switch문 → if문 변환 --------------------------------------------------- */
 
 /* switch vs. if -------------------------------------------------------- */
 
-<<<<<<< HEAD
-//함수는 하나의 기능만을 수행하는 것
-
-//sEPARATION OF CONCERNS (관심사의 분리)
-// 매개변수 PARAMETER
-function getRandom(n) {
-  const value = Math.floor(Math.random() * n);
-  return value;
-}
-function getDay(value) {
-  // const value = getRandom(num);
-  // const value = Math.floor(Math.random() * 7);
-
-  console.log(value);
-
-  switch (value) {
-    case 0:
-      console.log('일');
-      break;
-    case 1:
-      console.log('월');
-      break;
-    case 2:
-      console.log('화');
-      break;
-    case 3:
-      console.log('수');
-      break;
-    case 4:
-      console.log('목');
-      break;
-    case 5:
-      console.log('금');
-      break;
-    case 6:
-      console.log('토');
-      break;
-  }
-}
-=======
 // 1. 변수에 담는다 => prompt를 통해서 숫자를 입력 받는다. (0~6까지)
 
 // 2. switch case 문을 사용해서
@@ -161,52 +118,41 @@ function getRandom(n){
 function getDay(value){
 
   switch (value) {
-    case 0: console.log('일'); break;
-    case 1: console.log('월'); break;
-    case 2: console.log('화'); break;
-    case 3: console.log('수'); break;
-    case 4: console.log('목'); break;
-    case 5: console.log('금'); break;
-    case 6: console.log('토'); break;
+    case 0: return '일';
+    case 1: return '월';
+    case 2: return '화';
+    case 3: return '수';
+    case 4: return '목';
+    case 5: return '금';
+    case 6: return '토';
   }
 }
 
 
 // 3. 0~6까지 랜덤수를 받아서
 
-
+console.clear()
 
 function weekend(){
   // getDay 실행해서 요일을 받아옴  일 ~ 월
+  const today = getDay(getRandom(7));
+
+
+  // if(today.includes('토') || today.includes('일')){
+  //   return '주말입니다!';
+  // }else{
+  //   return '평일입니다.'
+  // }
+
 
   // 해당 요일을 가지고 토,일 => 주말입니다.
-  
+
   // if.. switch.. 삼항식
 
   // 평일입니다.
 
+  // const day = today.includes('토') ? '토요일' : today.includes('일') ? '일요일' : '평일'
+  // return day;
+  return today.includes('토') ? '토요일' : today.includes('일') ? '일요일' : '평일'
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 5285ac7869c8a889dca375113927cff3aea77c73
