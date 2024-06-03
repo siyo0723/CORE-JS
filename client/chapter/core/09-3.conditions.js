@@ -156,3 +156,31 @@ function weekend(){
   return today.includes('토') ? '토요일' : today.includes('일') ? '일요일' : '평일'
 
 }
+
+
+
+const day = weekend();
+
+console.log(day) // '평일'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
