@@ -49,14 +49,15 @@ while(i < l) {
 
 for(let i = 0; i < l; i++){
   let value = frontEndDev[i];
+  let lower = value.toLowerCase();
 
-  if(value.includes('jQuery') || value.includes('SVG')) continue;
+  // if(lower.includes('jquery') || lower.includes('svg')) continue;
 
-  console.log( value );
+  if(lower.includes('jquery')) break;
+
+  // console.log( value );
 
 }
-
-
 
 
 //   - 조건이 맞을 경우, 순환 중단(break)
@@ -65,3 +66,34 @@ for(let i = 0; i < l; i++){
 
 //   - 무한 루프 (브레이크)
 //   - for 문 (역순환)
+
+
+// for(let i = 0; i < l; i++){
+
+//   console.log( frontEndDev.shift() );
+// }
+
+
+
+// for(let i = l, subject; subject = frontEndDev[--i];){
+//   console.log(subject);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
