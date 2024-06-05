@@ -323,7 +323,6 @@ const template = people.reduce(function(htmlCode,cur){
 },'')
 
 
-
 // document.body.insertAdjacentHTML('beforeend',template)
 
 
