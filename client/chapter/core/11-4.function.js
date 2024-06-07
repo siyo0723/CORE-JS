@@ -15,15 +15,21 @@
 // - 재귀 단계(step)
 // - 재귀 깊이(depth)
 
-// function pow(x, n) {
-//   if (n == 1) {
-//     return x;
-//   } else {
-//     return x * pow(x, n - 1);
-//   }
-// }
 
-// pow(2,3)
+
+function pow(x,n){
+  
+  if(n === 1){
+    return x;
+  }
+  else{
+    return x * pow( x , n - 1 );
+  }
+}
+
+
+pow(2,3)
+
 
 
 // factorial 함수를 재귀 호출 방식으로 작성
@@ -32,13 +38,18 @@
 // - 기호(!)를 사용하여 n!으로 표기
 // - 예시) 4! = 4 * 3 * 2 * 1
 
-// function factorial(n) {
-//   if (n === 1) {
-//     return n;
-//   } else {
-//     return n * factorial(n, n - 1);
-//   }
-// }
+
+
+function factorial(n){
+  if( n === 1){
+    return n;
+  }
+  else{
+    return n * factorial(n-1);
+  }
+}
+
+
 
 
 // fibonacci 함수를 재귀 호출 방식으로 작성
@@ -46,13 +57,22 @@
 // - 피보나치 수 = 처음과 두번째 항은 1이고, 그 뒤 모든 항은 바로 앞 두 항을 더한 합인 수열
 // 예시) 1, 1, 2, 3, 5, 8, ...
 
+
+
 function fibonacci(n){
   if(n <= 0) return 0;
   if(n <= 2) return 1;
-
   return fibonacci(n-1) + fibonacci(n-2);
-  
 }
+
+
+
+
+
+
+
+
+
 
 // -----------------------------------------------------------------------
 
@@ -85,6 +105,35 @@ function fibonacci(n){
 // 메모이제이션을 사용한 fibonacci 함수를 작성해보세요.
 // 참고: https://bit.ly/memoiz
 // - 동일 계산 반복 시, 이전 계산 값을 메모리에 저장하여 실행 속도를 높이는 방법
+
+
+
+
+// const cache = {}
+
+
+
+const memoFibo = (n)=>{
+  if(n <= 0) return 0;
+  if(n <= 2) return 1;
+
+  if(memoFibo.cache[n]){
+    return memoFibo.cache[n];
+  }
+  else{
+    return memoFibo.cache[n] = memoFibo(n-1) + memoFibo(n-2);
+  }
+}
+
+
+memoFibo.cache = {}
+
+
+
+
+
+
+
 
 
 // 회사 부서 팀원들의 월급 총 합을 구해보세요.
@@ -131,3 +180,112 @@ const SocialPartiners = {
     },
   },
 };
+
+
+
+function sumSalaries(department){
+  
+  if(Array.isArray(department)){
+    return department.reduce((acc,cur)=> acc + cur.salary,0)
+  }else{
+
+    let sum = 0;
+    for(let sub of Object.values(department)){
+      sum += sumSalaries(sub)
+    }
+    return sum;
+  }
+}
+
+
+
+function isArray(data){
+  return Array.isArray(data)
+}
+
+
+const randomUser = {
+  gender: 'female',
+  name: { title: 'Ms', first: 'Carol', last: 'May' },
+  location: {
+    street: { number: 9162, name: 'Church Road' },
+    city: 'Birmingham',
+    state: 'Cumbria',
+    country: 'United Kingdom',
+    postcode: 'FO5E 4TN',
+    coordinates: { latitude: '-4.3301', longitude: '155.0223' },
+    timezone: { offset: '-4:00', description: 'Atlantic Time (Canada), Caracas, La Paz' },
+  },
+  email: 'carol.may@example.com',
+  login: {
+    uuid: '39e4e214-7f66-44a6-a3ba-3b5ce46b8e25',
+    username: 'redduck745',
+    password: 'picks',
+    salt: '8xzqOzAn',
+    md5: '7250e4042c2367cc82487f798c7c5253',
+    sha1: '6c0e2fac669d6d7f11fb0bab52493f441cf5834b',
+    sha256: '9e49256b8917113750533c24c015336af43d5d7130cf8faa19054c1ba36e7de8',
+  },
+  dob: { date: '1962-12-07T21:51:26.781Z', age: 59 },
+  registered: { date: '2018-06-08T04:07:17.788Z', age: 4 },
+  phone: '022 1280 9236',
+  cell: '07653 428700',
+  id: { name: 'NINO', value: 'SH 44 98 72 L' },
+  picture: {
+    large: 'https://randomuser.me/api/portraits/women/21.jpg',
+    medium: 'https://randomuser.me/api/portraits/med/women/21.jpg',
+    thumbnail: 'https://randomuser.me/api/portraits/thumb/women/21.jpg',
+  },
+  nat: 'GB',
+};
+
+
+function print(data){
+
+  if(Object.prototype.toString.call(data).slice(8,-1).toLowerCase() === 'object'){
+    for(let keyValue of Object.entries(data)){
+      let key = keyValue[0]
+      let value = keyValue[1]
+  
+      if(typeof value === 'object' || isArray(value)){
+        print(value)
+      }else{
+        console.log(key,' : ' ,value);
+      }
+    }
+  }
+
+  if(isArray(data)){
+    data.forEach((value,index)=>{
+      if(typeof value === 'object' || isArray(value)){
+        print(value)
+      }else{
+        console.log(index,' : ' ,value);
+      }
+    })
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
