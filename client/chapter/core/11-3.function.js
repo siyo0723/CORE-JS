@@ -29,21 +29,36 @@ let resultZ = calculateTotal(9000, -2500, 5000, 11900);
 //                   rest parameter
 let calcAllMoney  = (...rest) => {
   
-  console.log(rest);
+  let total = 0;
+
+  // for 문 
+  // for(let i = 0; i < rest.length; i++){
+  //   total += rest[i];
+  // }
+
+
+  // for...of 문
+  // for(let value of rest){
+  //   total += value;
+  // }
+
+  // forEach  => arrow function
+  // rest.forEach(function(item){
+  //   total += item;
+  // })
+
+  // rest.forEach(item => total += item)
+
+
+  // reduce => arrow function
+
+  // const result = rest.reduce(function(acc,cur){
+  //   return acc + cur
+  // },0)
+
+  
+  return rest.reduce((acc,cur) => acc + cur,0);
 
 };
 
 const result = calcAllMoney(1000,5000,4500,13000);
-
-console.log(result);
-
-// 화살표 함수와 this
-
-
-/* 다음 함수를 작성해봅니다. -------------------------------------------------- */
-
-// pow(numeric: number, powerCount: number): number;
-let pow; 
-
-// repeat(text: string, repeatCount: number): string;
-let repeat; 
