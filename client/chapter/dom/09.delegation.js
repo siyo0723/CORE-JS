@@ -10,9 +10,6 @@ const nav = getNode('nav');
 
 
 
-
-
-
 function handleClick(e){
   // console.log( e.target );
   const target = e.target;
