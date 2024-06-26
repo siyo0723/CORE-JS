@@ -12,6 +12,7 @@ import { getNode } from './getNode.js'
  * @returns {void}
  */
 
+
 export function showAlert(node,message,timeout = 1000){
   
   if(isString(node)) node = getNode(node)
